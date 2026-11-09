@@ -1,0 +1,68 @@
+{
+  "cost_model_micro_usd_per_operation": {
+    "compute": 1000,
+    "read": 2000,
+    "write": 4000
+  },
+  "limitations": [
+    "All tasks and prices are synthetic; not an agent, LLM, or cloud workload.",
+    "Positive-control repetitions are deliberately constructed.",
+    "Simulated cost reduction is not actual savings or a generalization estimate.",
+    "No sampling uncertainty is estimated for this deterministic demonstration."
+  ],
+  "network_calls": 0,
+  "provenance": "NEW explanatory public simulator, November 2026; NOT the original private Melior benchmark",
+  "real_cloud_spend_usd": 0,
+  "real_provider_spend_usd": 0,
+  "scenarios": [
+    {
+      "baseline": {
+        "executed_reads": 120,
+        "failed_tasks": 0,
+        "reused_reads": 0,
+        "simulated_cost_per_success_usd": 0.009,
+        "simulated_total_cost_usd": 0.54,
+        "successful_tasks": 60,
+        "tasks": 60
+      },
+      "same_transcript_and_state_all_tasks": true,
+      "scenario": "unique-reads-negative-control",
+      "simulated_cost_reduction_pct": 0.0,
+      "simulated_cost_reduction_usd": 0.0,
+      "strict_read_reuse": {
+        "executed_reads": 120,
+        "failed_tasks": 0,
+        "reused_reads": 0,
+        "simulated_cost_per_success_usd": 0.009,
+        "simulated_total_cost_usd": 0.54,
+        "successful_tasks": 60,
+        "tasks": 60
+      }
+    },
+    {
+      "baseline": {
+        "executed_reads": 96,
+        "failed_tasks": 0,
+        "reused_reads": 0,
+        "simulated_cost_per_success_usd": 0.013,
+        "simulated_total_cost_usd": 0.312,
+        "successful_tasks": 24,
+        "tasks": 24
+      },
+      "same_transcript_and_state_all_tasks": true,
+      "scenario": "engineered-duplicates-positive-control",
+      "simulated_cost_reduction_pct": 30.7692,
+      "simulated_cost_reduction_usd": 0.096,
+      "strict_read_reuse": {
+        "executed_reads": 48,
+        "failed_tasks": 0,
+        "reused_reads": 48,
+        "simulated_cost_per_success_usd": 0.009,
+        "simulated_total_cost_usd": 0.216,
+        "successful_tasks": 24,
+        "tasks": 24
+      }
+    }
+  ],
+  "source": "experiments/public_demo.py"
+}
